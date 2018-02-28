@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<HEAD>
+<TITLE>Contact</TITLE>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</HEAD>
+
+<body>
+
+<img class="onion" src="Zwiebel-lineart-300px.png">
+<h1>Moldy Onions</h1>
+
+<nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="movie1.html">Star Wars</a></li>
+  <li><a href="movie2.html">Bee Movie</a></li>
+  <li><a href="movie3.html">Ratatouille</a></li>
+  <li class="active"><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+
+<h2 id="reviewTitle">Leave a Review</h2>
+
+<form action="https://formspree.io/byujmc@gmail.com" method="POST">
+    <div>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="user_name">
+    </div>
+    <div id="select">
+        <label for="mail">Movie:</label><br>
+        <select name="movies">
+	  <option value="" disabled selected>Select a movie</option>
+	  <option value="starwars">Star Wars</option>
+	  <option value="starwars">Bee Movie</option>
+	  <option value="starwars">Ratatouille</option>
+	</select>
+    </div>
+    <div id="review">
+        <label for="msg">Review:</label><br>
+        <textarea id="msg" name="user_message"></textarea>
+    </div>
+    <div>
+	<label for="suggest">Suggest a new movie:</label><br>
+	<input type="text" id="suggest" name="new_suggestion">
+    </div>
+
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+
+</form>
+
+<footer>
+  <p>Created By: Joseph Gillespie and Jason Cannon</p>
+  <p>See the github <a href="https://github.com/jgilles3/creativeLab1">
+  repository</a>.</p>
+</footer>
+</body>
+</html>
