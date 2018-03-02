@@ -27,16 +27,18 @@
 
 <div class="wrapper">
   <div class="app">
-    <h2 v-model="page">Star Wars</h2>
-    <div v-for="comment in comments[page]" class="reviews">
-      <hr>
-  	  <p>{{comment.text}}</p>
-  	  <p class="signature"><i>-- {{comment.author}}</i></p>
-  	  <p>{{comment.time}}</p>
-      </div>
+    <h2>Star Wars</h2>
+    <div class="reviews" v-bind:style="{ 'background-color': color }">
+        <p class="centerMessage" v-if="comments1.length === 0">What did you think of this movie?</p>
+        <div v-for="comment in comments1">
+          <hr v-if="!(comment === comments1[0])">
+      	  <p class="commentBody">{{comment.text}}</p>
+      	  <p class="signature"><i>-- {{comment.author}} ({{comment.date}})</i></p>
+        </div>
+    </div>
       <div class="leave-review">
         <h3 class="inputTitle">Leave a Review</h3>
-      	<form class="lessMargins" v-on:submit.prevent="addComment">
+      	<form class="lessMargins" v-on:submit.prevent="addComment1">
       	  <input v-model="addedName" placeholder="Name"></p>
       	  <textarea v-model="addedComment"></textarea>
       	  <br/>
@@ -91,7 +93,7 @@
 
 <footer>
   <p>Created By: Joseph Gillespie and Jason Cannon</p>
-  <p>See the github <a href="https://github.com/jgilles3/creativeLab1">
+  <p>See the github <a href="https://github.com/cannonj3/creativeLab3">
   repository</a>.</p>
 </footer>
 <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>

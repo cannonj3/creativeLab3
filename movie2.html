@@ -26,21 +26,28 @@
 </nav>
 
 <div class="wrapper">
-  <div class="reviews">
-    <h2>Reviews</h2>
-    <p>The bee movie is unbeelievably good.  Such beeutiful animation and music.  Would very much recommend.</p>
-    <p class="signature">-Joseph Gillespie, expert<p><hr>
 
-    <p>A very clever movie with some great one-liners. Caused a lot of mixed emotions though. About halfway through
-    the movie I felt enough guilt to give up honey, but by the end I had committed to doubling my honey intake in order
-    to save the flowers.</p>
-    <p class="signature">-Jason Cannon, expert<p><hr>
-
-    <p>Bzzzzz bzzz bzzzzzz bzz bzzzz bzzzzzzz bzz bzzzz bzzz bzzzzzz bzzz.  Bzzz bzzzzz bzzz bzzzzzz bzzz.</p>
-    <p class="signature">-HiveWorker 33<p>
-
-
+  <div class="app">
+    <h2>Star Wars</h2>
+    <div class="reviews" v-bind:style="{ 'background-color': color }">
+        <p class="centerMessage" v-if="comments2.length === 0">What did you think of this movie?</p>
+        <div v-for="comment in comments2">
+          <hr v-if="!(comment === comments2[0])">
+      	  <p class="commentBody">{{comment.text}}</p>
+      	  <p class="signature"><i>-- {{comment.author}} ({{comment.date}})</i></p>
+        </div>
+    </div>
+      <div class="leave-review">
+        <h3 class="inputTitle">Leave a Review</h3>
+      	<form class="lessMargins" v-on:submit.prevent="addComment2">
+      	  <input v-model="addedName" placeholder="Name"></p>
+      	  <textarea v-model="addedComment"></textarea>
+      	  <br/>
+      	  <button class="commentButton" type="submit">Submit</button>
+      	</form>
+      </div>
   </div>
+
 
   <div class="movieGrid">
 
@@ -88,7 +95,7 @@
 
 <footer>
   <p>Created By: Joseph Gillespie and Jason Cannon</p>
-  <p>See the github <a href="https://github.com/jgilles3/creativeLab1">
+  <p>See the github <a href="https://github.com/cannonj3/creativeLab3">
   repository</a>.</p>
 </footer>
 <script src="https://unpkg.com/vue-star-rating/dist/star-rating.min.js"></script>

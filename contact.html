@@ -23,41 +23,41 @@
 </ul>
 </nav>
 
+<div class="contactPage">
+  <h2 id="reviewTitle">Suggest A Movie</h2>
 
-<h2 id="reviewTitle">Leave a Review</h2>
+  <form action="https://formspree.io/byujmc@gmail.com" method="POST">
+      <div>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="user_name">
+      </div>
+      <div>
+        	<label for="suggest">Movie title:</label><br>
+        	<input type="text" id="suggest" name="new_suggestion">
+      </div>
+      <div id="review">
+          <label for="msg">Why should we add this movie?</label><br>
+          <textarea id="msg" name="user_message"></textarea>
+      </div>
 
-<form action="https://formspree.io/byujmc@gmail.com" method="POST">
-    <div>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="user_name">
-    </div>
-    <div id="select">
-        <label for="mail">Movie:</label><br>
-        <select name="movies">
-	  <option value="" disabled selected>Select a movie</option>
-	  <option value="starwars">Star Wars</option>
-	  <option value="starwars">Bee Movie</option>
-	  <option value="starwars">Ratatouille</option>
-	</select>
-    </div>
-    <div id="review">
-        <label for="msg">Review:</label><br>
-        <textarea id="msg" name="user_message"></textarea>
-    </div>
-    <div>
-	<label for="suggest">Suggest a new movie:</label><br>
-	<input type="text" id="suggest" name="new_suggestion">
-    </div>
-
-    <div>
-      <button type="submit">Submit</button>
+      <div id="select">
+        <label for="mail">Do you like onions?</label><br>
+        <select name="LikeOnions?">
+      	  <option value="" disabled selected>Select a response</option>
+      	  <option value="Yes">Yes</option>
+      	  <option value="No">No</option>
+      	</select>
     </div>
 
-</form>
+      <div>
+        <button class="contactButton" type="submit">Submit</button>
+      </div>
 
+  </form>
+</div>
 <footer>
   <p>Created By: Joseph Gillespie and Jason Cannon</p>
-  <p>See the github <a href="https://github.com/jgilles3/creativeLab1">
+  <p>See the github <a href="https://github.com/cannonj3/creativeLab3">
   repository</a>.</p>
 </footer>
 </body>
